@@ -14,7 +14,20 @@ def even_number():
         if i != 0:
             print(i, end=' ')
 
+def frequency_word(sentence):
+    frequency = {}
+    words = sentence.split(' ')
+    for word in words:
+        if word in frequency:
+            frequency[word] += 1
+        else:
+            frequency[word] = 1
+
+    return frequency
+
 num = [1, 2, 3, 4, 5, 6]
 print("sum:", sum_number(num))
 even_number()
 print("\nLargest number:", largest_number(num))
+sentence = "I love python programming"
+print(frequency_word(sentence))
