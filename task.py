@@ -28,6 +28,6 @@ def frequency_word(sentence):
 num = [1, 2, 3, 4, 5, 6]
 print("sum:", sum_number(num))
 even_number()
-print("\nLargest number:", largest_number(num))
+print("\nLargest number:", largest_numb8er(num))
 sentence = "I love python programming"
 print(frequency_word(sentence))
