@@ -1,18 +1,11 @@
-from django.urls import path
-from .views import (
-    postList,
-    postDetailView,
-    postCreateView,
-    postUpdateView,
-    postDeleteView
-)
-from . import views
+
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import PostViewSet
+
+router = DefaultRouter()
+router.register(r'posts', PostViewSet)
 
 urlpatterns = [
-    path('', postList, name='blog-home'),
-    path('post/<int:pk>/', postDetailView, name='post-detail'),
-    path('post/new/', postCreateView, name='post-create'),
-    path('post/<int:pk>/update/', postUpdateView, name='post-update'),
-    path('post/<int:pk>/delete/', postDeleteView, name='post-delete'),
-    path('about/', views.about, name='blog-about'),
+    path('', include(router.urls)),
 ]
